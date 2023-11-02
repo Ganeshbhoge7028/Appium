@@ -1,4 +1,4 @@
-package testCases;
+  package testCases;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,6 +59,9 @@ AndroidDriver driver = Verify_Check_LoginUser_with_Valid_Credentials.login();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		driver.findElement(By.xpath(
+				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.app.Dialog/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.widget.Button"))
+				.click();
 	}
 
 }

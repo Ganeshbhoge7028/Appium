@@ -56,5 +56,8 @@ public class Verify_Check_Send_RTP_with_Invalid_Amount {
 	} catch (IOException e) {
 		e.printStackTrace();
 	}
+	driver.findElement(By.xpath(
+			"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.app.Dialog/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View/android.widget.Button"))
+			.click();
 }
 }

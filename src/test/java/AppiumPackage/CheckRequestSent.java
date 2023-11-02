@@ -47,7 +47,7 @@ public class CheckRequestSent {
 		RTP(driver);
 		// RTPsent(driver);
 		// Transacton(driver); ======> stop
-		// QRScan(driver);
+		 QRScan(driver);
 		SignOut(driver);
 		Login(driver);
 		RTPsent(driver);

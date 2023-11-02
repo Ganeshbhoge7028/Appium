@@ -13,11 +13,13 @@ import io.appium.java_client.android.AndroidDriver;
 public class Verify_Check_LoginUser_with_Valid_Credentials {
 	public AndroidDriver driver;
 
-	public static void main(String[] args) throws MalformedURLException, IllegalMonitorStateException, InterruptedException, IOException {
+	public static void main(String[] args)
+			throws MalformedURLException, IllegalMonitorStateException, InterruptedException, IOException {
 		login();
 	}
-			public static AndroidDriver login()throws MalformedURLException, IllegalMonitorStateException, InterruptedException, IOException {
-				
+
+	public static AndroidDriver login()
+			throws MalformedURLException, IllegalMonitorStateException, InterruptedException, IOException {
 
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("platformName", "Android");
@@ -27,19 +29,19 @@ public class Verify_Check_LoginUser_with_Valid_Credentials {
 		caps.setCapability("automationName", "uiautomator2");
 		caps.setCapability("nativeWebScreenshot", true);
 		caps.setCapability("autoWebview", false);
+		caps.setCapability("autoAcceptAlerts", true);
+		caps.setCapability("unicodeKeyboard", true);
 		caps.setCapability("chromedriverExecutable", "./Data/chromedriver.exe");
-		
-	
-		
+
 		AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		WebElement email = driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View/android.widget.ListView/android.view.View[1]/android.view.View"));
 		email.click();
-		WebElement Email= driver.findElement(By.xpath(
+		WebElement Email = driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.widget.ListView/android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText"));
-				Email.sendKeys("Nikhil@gmail.com");
+		Email.sendKeys("Ranjit@gmail.com");
 
 		WebElement pass = driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.widget.ListView/android.view.View[2]/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.widget.EditText"));
@@ -47,8 +49,8 @@ public class Verify_Check_LoginUser_with_Valid_Credentials {
 		driver.findElement(By.xpath(
 				"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View[3]/android.view.View/android.widget.Button"))
 				.click();
-	//	Email.clear();
+		System.out.println("user login succes");
+		// Email.clear();
 		return driver;
-		    }
-	} 
-
+	}
+}
